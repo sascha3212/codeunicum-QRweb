@@ -11,9 +11,10 @@ class HomeController extends Controller
     public function GenerateQR()
     {
         $randomhash = bin2hex(random_bytes(256));
+        $hash = 'codeunicum-'.$randomhash;
 
         return view('qrcode',[
-            'qrcode_hash' => $randomhash
+            'qrcode_hash' => $hash
         ]);
 
     }
